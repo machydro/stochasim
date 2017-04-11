@@ -2,7 +2,7 @@
 % Please edit documentation in R/stochasim_functions.R
 \name{est_effective}
 \alias{est_effective}
-\title{Plot sediment transport data from stochasim}
+\title{Estimate the effective discharge based on bedload transport}
 \usage{
 est_effective(results, Map = F)
 }

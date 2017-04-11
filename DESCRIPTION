@@ -3,7 +3,7 @@ Title: An implementation of the STOCHASIM stream channel model
 Version: 0.1
 Authors@R: person("Brett", "Eaton", email = "brett.eaton@ubc.ca", role = c("aut", "cre"))
 Description: The package provides functions to prepare the required data files, to run the STOCHASIM model first developed by Sarah Davidson (Phd Thesis, 2016), and to analyse the output
-Depends: R (>= 3.3.2)
+Depends: R (>= 3.0.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

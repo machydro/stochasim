@@ -2,7 +2,7 @@
 % Please edit documentation in R/stochasim_functions.R
 \name{est_formative}
 \alias{est_formative}
-\title{Estimate the dominant discharge for a channel}
+\title{Estimate the formative discharge for a channel based on bank erosion}
 \usage{
 est_formative(results, Map = F)
 }
