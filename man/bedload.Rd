@@ -4,7 +4,7 @@
 \alias{bedload}
 \title{Calculate sediment transport rate}
 \usage{
-bedload(R, D50, D84, S, Tc50 = 0.045)
+bedload(R, D50, D84, S, Tc50 = 0.036)
 }
 \arguments{
 \item{R}{hydraulic radius for channel cross section (m)}
@@ -15,7 +15,7 @@ bedload(R, D50, D84, S, Tc50 = 0.045)
 
 \item{S}{reach average channel gradient (m/m)}
 
-\item{TC50}{(optional) critical dimensionless stress for D50 (default = 0.045)}
+\item{TC50}{(optional) critical dimensionless stress for D50 (default = 0.036)}
 }
 \description{
 \code{bedload} estimates the bedload transport rate per unit width based on 

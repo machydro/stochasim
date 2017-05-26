@@ -44,15 +44,15 @@ stress = function(R, S, rho = 1000){
 #' 
 #' @param Di vector of grain sizes to analyse (mm)
 #' @param D50 median grain size for the bed surface (mm)
-#' @param TC50 (optional) critical dimensionlessstress for D50 (default is 0.045)
+#' @param TC50 (optional) critical dimensionlessstress for D50 (default is 0.036)
 #' @export 
-crit_stress = function(Di, D50, TC50 = 0.045){
+crit_stress = function(Di, D50, TC50 = 0.036){
   g = 9.81
   rho = 1000
   rho.sed = 2650
   Tci = numeric(length(Di))
   if(length(D50) == 1){
-    Tcrit = 0.045 * g * (rho.sed - rho) * D50 / 1000
+    Tcrit = TC50 * g * (rho.sed - rho) * D50 / 1000
     Tci[which(Di < D50)] = Tcrit * (Di[which(Di < D50)]/D50)^0.12
     Tci[which(Di >= D50)] = Tcrit * (Di[which(Di >= D50)]/D50)^0.67
     return(Tci)
@@ -148,9 +148,9 @@ sim_gsd = function(D50, sp = 1, Map = FALSE){
 #' @param D50 median surface grain size (mm)
 #' @param D84 84th percentile of bed surface in main channel (mm)
 #' @param S reach average channel gradient (m/m) 
-#' @param TC50 (optional) critical dimensionless stress for D50 (default = 0.045)
+#' @param TC50 (optional) critical dimensionless stress for D50 (default = 0.036)
 #' @export 
-bedload = function(R, D50, D84, S, Tc50 = 0.045){
+bedload = function(R, D50, D84, S, Tc50 = 0.036){
   g = 9.81
   Gs = 1.65
   rho = 1000
@@ -180,11 +180,12 @@ bedload = function(R, D50, D84, S, Tc50 = 0.045){
 #' 
 #' @param gsd data frame containing GSD information (as per \code{simulate_gsd})
 #' @param stress estimated mean boundary shear stress acting on the bed (Pa)
+#' @param TC50 (optional) critical dimensionlessstress for D50 (default is 0.045)
 #' @param Map (optional) LOGICAL, when TRUE, the distributions are graphed
 #' @export 
-bed_stability = function(gsd, stress, Map = F){
+bed_stability = function(gsd, stress, TC50 = 0.036, Map = F){
   D50 = as.numeric(approx(x = gsd$cdf, y = gsd$size_class, xout = 0.5))
-  grain.tci = crit_stress(gsd$size_mid, D50[2])
+  grain.tci = crit_stress(gsd$size_mid, D50[2], TC50)
   gsd$p.stab = round(stab_fraction(stress, grain.tci) * gsd$p, digits = 3)
   gsd$p.mob = (1 - stab_fraction(stress, grain.tci)) * gsd$p
   index = gsd$p.mob / gsd$p < 0.02

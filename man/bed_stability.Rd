@@ -4,12 +4,14 @@
 \alias{bed_stability}
 \title{Analyze bed stability}
 \usage{
-bed_stability(gsd, stress, Map = F)
+bed_stability(gsd, stress, TC50 = 0.036, Map = F)
 }
 \arguments{
 \item{gsd}{data frame containing GSD information (as per \code{simulate_gsd})}
 
 \item{stress}{estimated mean boundary shear stress acting on the bed (Pa)}
+
+\item{TC50}{(optional) critical dimensionlessstress for D50 (default is 0.045)}
 
 \item{Map}{(optional) LOGICAL, when TRUE, the distributions are graphed}
 }

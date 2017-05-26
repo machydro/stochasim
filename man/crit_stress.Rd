@@ -4,14 +4,14 @@
 \alias{crit_stress}
 \title{Estimate the critical shear stress}
 \usage{
-crit_stress(Di, D50, TC50 = 0.045)
+crit_stress(Di, D50, TC50 = 0.036)
 }
 \arguments{
 \item{Di}{vector of grain sizes to analyse (mm)}
 
 \item{D50}{median grain size for the bed surface (mm)}
 
-\item{TC50}{(optional) critical dimensionlessstress for D50 (default is 0.045)}
+\item{TC50}{(optional) critical dimensionlessstress for D50 (default is 0.036)}
 }
 \description{
 \code{crit_stress} estimates the shear stress required to entrain a grain of
