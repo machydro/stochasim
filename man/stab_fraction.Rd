@@ -15,7 +15,7 @@ stab_fraction(T, Tci, Map = FALSE)
 }
 \description{
 \code{stab_fraction} calculates the proportion of a grain size fraction that
-is likely to remain immobile during a flood event, based on the ratio of the 
+is likely to remain immobile during a flood event, based on the ratio of the
 mean boundary shear stress to the critical shear stress to entrain the that
 grain size fraction
 }

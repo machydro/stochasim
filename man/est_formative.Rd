@@ -14,6 +14,6 @@ est_formative(results, Map = F)
 \description{
 \code{est_formative} takes results produced by running STOCHASIM and
 estimates the formative discharge, defined to be the discharge that does the
-most bank erosion over time. Smaller flows can erode the banks, but these 
+most bank erosion over time. Smaller flows can erode the banks, but these
 ones are responsible for the majority of the bank erosion
 }

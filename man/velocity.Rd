@@ -14,6 +14,6 @@ velocity(R, S, D84)
 \item{D84}{84th percentile of bed surface in main channel (mm)}
 }
 \description{
-\code{velocity} returns the mean flow velocity (m/s) for a given hydraulic  
+\code{velocity} returns the mean flow velocity (m/s) for a given hydraulic
 radius, bed surface D84, and reach average gradient using Ferguson (2007)
 }

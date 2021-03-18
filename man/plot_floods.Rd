@@ -11,7 +11,7 @@ plot_floods(results)
 }
 \description{
 \code{plot_floods} takes results produced by running STOCHASIM and
-produces a typical flood frequency plot. The data are color coded by 
+produces a typical flood frequency plot. The data are color coded by
 whether or not the channel was unstable during the flood event. the limits
 of the stable and unstable flood populations are indicated with a dashed
 line.

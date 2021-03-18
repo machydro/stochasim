@@ -12,7 +12,7 @@ est_mu(H, d)
 \item{d}{mean hydraulic depth at channel-forming flow (m)}
 }
 \description{
-\code{est_mu} uses an empirical function to estimate the relative bank 
+\code{est_mu} uses an empirical function to estimate the relative bank
 strength produced by vegetation with a known effective rooting depth (H)
 (after Eaton, 2006) and a known average channel depth (d). The function only
 applies when H < 0.9d.

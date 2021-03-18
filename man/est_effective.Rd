@@ -14,6 +14,6 @@ est_effective(results, Map = F)
 \description{
 \code{est_effective} takes results produced by running STOCHASIM and
 estimates the effective discharge (i.e. the one that does the most geom
--orphic work. The function can also produce a plot of the proportion of 
+-orphic work. The function can also produce a plot of the proportion of
 the total work associated with a given flow.
 }

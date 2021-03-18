@@ -11,17 +11,17 @@ bed_stability(gsd, stress, TC50 = 0.036, Map = F)
 
 \item{stress}{estimated mean boundary shear stress acting on the bed (Pa)}
 
-\item{TC50}{(optional) critical dimensionlessstress for D50 (default is 0.045)}
+\item{TC50}{(optional) critical dimensionless stress for D50 (default is 0.045)}
 
 \item{Map}{(optional) LOGICAL, when TRUE, the distributions are graphed}
 }
 \description{
-\code{bed_stability} is a function that takes the grain size distribution 
+\code{bed_stability} is a function that takes the grain size distribution
 data output from \code{simulate_gsd}, and an estimate of the mean boundary
 shear stress to estimate the fraction of the bed that is stable, accounting
 for partial mobility for stresses between 1 and 2 times the critical value.
 Estimates of the stable proportion in each size class is added to the data
-frame,as are estimates of the CDF. The total areal fraction of the bed that
-is stable can be estimated by summing the variable p.stab in the output 
+frame, as are estimates of the CDF. The total areal fraction of the bed that
+is stable can be estimated by summing the variable p.stab in the output
 dataframe.
 }

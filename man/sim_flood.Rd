@@ -17,6 +17,6 @@ sim_flood(Qmean, Qmax, n = 1000, Map = F)
 }
 \description{
 \code{sim_flood} is a function to generate a log normal flood distribution
-based on specifying the mean annual peak flow and an estimate of the maximum 
+based on specifying the mean annual peak flow and an estimate of the maximum
 probable flood
 }

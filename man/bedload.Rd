@@ -18,7 +18,7 @@ bedload(R, D50, D84, S, Tc50 = 0.036)
 \item{TC50}{(optional) critical dimensionless stress for D50 (default = 0.036)}
 }
 \description{
-\code{bedload} estimates the bedload transport rate per unit width based on 
+\code{bedload} estimates the bedload transport rate per unit width based on
 the Eaton and Church (2011) function, using the bed surface D50 and the mean
  boundary shear stress
 }
