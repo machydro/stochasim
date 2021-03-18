@@ -236,7 +236,7 @@ bed_stability = function(gsd, stress, TC50 = 0.036, Map = F){
 #' @param D84 84th percentile of the bed surface grain size distribution (mm)
 #' @export
 solve_Q = function(Q, W, S, D84){
-  tol = 0.00001
+  tol = 0.0001
   bounds = c(0.01*Q^0.3, Q^0.3)
   test.d = mean(bounds)
   test.Q = W * test.d * velocity(test.d, S, D84)
