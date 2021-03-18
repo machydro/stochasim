@@ -4,7 +4,17 @@
 \alias{run_stochasim}
 \title{Run the STOCHASIM model}
 \usage{
-run_stochasim(gsd, Q, slope, H = 0, W = NA, D = NA, Qmaf = NA, veg.rate = 0.1)
+run_stochasim(
+  gsd,
+  Q,
+  slope,
+  H = 0,
+  W = NA,
+  D = NA,
+  Qmaf = NA,
+  veg.rate = 0.1,
+  tol = 1e-04
+)
 }
 \arguments{
 \item{gsd}{a data frame containing information on the bed surface GSD (see \code{sim_gsd})}
@@ -14,6 +24,16 @@ run_stochasim(gsd, Q, slope, H = 0, W = NA, D = NA, Qmaf = NA, veg.rate = 0.1)
 \item{slope}{reach average channel slope (m/m)}
 
 \item{H}{(optional) estimated effective rooting depth, affecting bank stability (m)}
+
+\item{W}{(optional) bankfull channel width (m)}
+
+\item{D}{(optional) bankfull channel depth (m)}
+
+\item{Qmaf}{(optional) mean annual flow (m3/s)}
+
+\item{veg.rate}{rate of annual gravel bar colonization (fraction); defaults to 0.1}
+
+\item{tol}{tolerance of convergence for finding the critical threshold for gsd}
 }
 \description{
 \code{run_stochasim} executes the stochastic channel simulator code The

@@ -234,9 +234,10 @@ bed_stability = function(gsd, stress, TC50 = 0.036, Map = F){
 #' @param W water surface width for the channel (m)
 #' @param S reach average channel gradient (m/m)
 #' @param D84 84th percentile of the bed surface grain size distribution (mm)
+#' @param tol tolerance for convergence
 #' @export
-solve_Q = function(Q, W, S, D84){
-  tol = 0.0001
+solve_Q = function(Q, W, S, D84, tol = 0.0001){
+  # tol = 0.0001
   bounds = c(0.01*Q^0.3, Q^0.3)
   test.d = mean(bounds)
   test.Q = W * test.d * velocity(test.d, S, D84)
@@ -322,8 +323,13 @@ est_mu = function(H,d){
 #' @param gsd a data frame containing information on the bed surface GSD (see \code{sim_gsd})
 #' @param Q a vector of floods to be used sequentially in the simulation (m3/s)
 #' @param H (optional) estimated effective rooting depth, affecting bank stability (m)
+#' @param W (optional) bankfull channel width (m)
+#' @param D (optional) bankfull channel depth (m)
+#' @param Qmaf (optional) mean annual flow (m3/s)
+#' @param veg.rate rate of annual gravel bar colonization (fraction); defaults to 0.1
+#' @param tol tolerance of convergence for finding the critical threshold for gsd
 #' @export
-run_stochasim = function(gsd, Q, slope, H = 0, W = NA, D = NA, Qmaf = NA, veg.rate = 0.1){
+run_stochasim = function(gsd, Q, slope, H = 0, W = NA, D = NA, Qmaf = NA, veg.rate = 0.1, tol = 0.0001){
   # gsd = gsd
   # Q = Qvals
   # slope = S
@@ -361,7 +367,7 @@ run_stochasim = function(gsd, Q, slope, H = 0, W = NA, D = NA, Qmaf = NA, veg.ra
   width.min = a*(mean.Q)^b # bank width at MAF
 
   # find the critical threshold for gsd by converging
-  tol = 0.001
+  # tol = 0.001
   abound = c(0.5, 2.0)
   a.test = mean(abound)
   stress.threshold = a.test*crit_stress(Dmax, D50)  #max stress that can be maintained (no riparian veg)
@@ -427,7 +433,7 @@ run_stochasim = function(gsd, Q, slope, H = 0, W = NA, D = NA, Qmaf = NA, veg.ra
 
   for(i in seq(2, nsim,1)){
     #calculate the flood shear stress
-    depth[i] = solve_Q(Q[i], width[i-1],slope, D84)
+    depth[i] = solve_Q(Q[i], width[i-1],slope, D84, tol = tol)
     tau = stress(depth[i], slope)
     vel = velocity(depth[i], slope, D84)
 

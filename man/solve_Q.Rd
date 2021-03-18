@@ -4,7 +4,7 @@
 \alias{solve_Q}
 \title{Solve for water depth}
 \usage{
-solve_Q(Q, W, S, D84)
+solve_Q(Q, W, S, D84, tol = 1e-04)
 }
 \arguments{
 \item{Q}{discharge contained by the channel (m3/s)}
@@ -14,6 +14,8 @@ solve_Q(Q, W, S, D84)
 \item{S}{reach average channel gradient (m/m)}
 
 \item{D84}{84th percentile of the bed surface grain size distribution (mm)}
+
+\item{tol}{tolerance for convergence}
 }
 \description{
 \code{solve_Q} uses a midpoint solution approach to find water depth that
